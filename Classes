@@ -1,0 +1,30 @@
+class Parent1:
+    def __init__(self):
+        self.attr1 = "Attribute from Parent1"
+    
+    def method1(self):
+        return "Method from Parent1"
+
+class Parent2:
+    def __init__(self):
+        self.attr2 = "Attribute from Parent2"
+    
+    def method2(self):
+        return "Method from Parent2"
+
+class Child(Parent1, Parent2):
+    def __init__(self):
+        Parent1.__init__(self)  # Initialize attributes from Parent1
+        Parent2.__init__(self)  # Initialize attributes from Parent2
+    
+    def child_method(self):
+        return "Method specific to Child class"
+
+
+# Пример использования класса Child
+child_obj = Child()
+print(child_obj.attr1)  # Output: Attribute from Parent1
+print(child_obj.method1())  # Output: Method from Parent1
+print(child_obj.attr2)  # Output: Attribute from Parent2
+print(child_obj.method2())  # Output: Method from Parent2
+print(child_obj.child_method())  # Output: Method specific to Child class
